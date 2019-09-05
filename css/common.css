@@ -1,0 +1,31 @@
+.text-uppercase {
+  text-transform: uppercase;
+}
+
+.button {
+  padding: 5px 12px;
+  color: #363636;
+  border: none;
+  border-radius: 2px;
+  text-align: center;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+/* 需要设置元素宽高 */
+.has-wh-center {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+}
+
+ /* 不需要设置或者关注元素宽高 */
+.translate-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

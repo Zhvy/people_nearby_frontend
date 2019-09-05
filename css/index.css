@@ -1,0 +1,124 @@
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  min-width: 1000px;
+  min-height: 700px;
+  background: url(../img/earth1.jpg) no-repeat top left / cover;
+}
+
+.main-info {
+  top: 40%;
+  width: 100%;
+  text-align: center;
+}
+
+.big-title {
+  letter-spacing: 8px;
+  font-size: 34px;
+  color: #fff;
+}
+
+.join {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 5px 16px;
+  background-color: #2abbfe;
+}
+
+.form {
+  display: none;
+  width: 800px;
+  height: 500px;
+  background-color: rgba(0, 0, 0, .5);
+  perspective: 2000px;
+  transform-style: preserve-3d;
+}
+
+.form-info {
+  display: flex;
+  position: relative;
+  justify-content: space-around;
+  align-items: center;
+  height: inherit;
+  color: #fff;
+}
+
+.form-info .title {
+  letter-spacing: 32px;
+  font-size: 26px;
+}
+.form-info .subtitle {
+  letter-spacing: 3px;
+  font-size: 24px;
+}
+.form-info .more {
+  margin: 50px 0 0 170px;
+}
+
+.sign {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 400px;
+  height: inherit;
+  background-color: #fff;
+  transform-origin: right;
+  transition: 1s;
+}
+
+.sign > div:nth-last-child(1) {
+  transform: rotateY(180deg);
+}
+
+.input-item {
+  width: 250px;
+  margin: 50px auto;
+  padding-left: 5px;
+  border-bottom: 1px solid #000;
+}
+
+.sign > div {
+  display: none;
+}
+
+.sign > div.active {
+  display: block;
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+}
+
+.form input {
+  margin-left: 10px;
+  padding: 5px 0 8px 10px;
+  font-size: 18px;
+  border: none;
+  /*outline: none;*/
+}
+
+.sign .title {
+  padding: 50px 50px 20px;
+  font-size: 28px;
+  font-weight: bold;
+  color: #0369ef;
+}
+
+.sign button.submit {
+  padding: 10px 5px 10px 46px;
+  border: none;
+  letter-spacing: 18px;
+  font-size: 18px;
+  color: #fff;
+  background-color: #0369ef;
+  cursor: pointer;
+  transition: .5s;
+}
+
+.sign button.submit:hover {
+  padding-left: 80px;
+}
