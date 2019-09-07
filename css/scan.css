@@ -1,0 +1,190 @@
+html {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  background-image: url(../img/bg.jpg);
+  background-size: cover;
+}
+
+.container {
+  position: relative;
+  width: 800px;
+  margin: 50px auto 0;
+  /*background-color: rebeccapurple;*/
+}
+
+/*  .circle 为最外圈
+    通过before 和 after 两个伪元素额外完成两个圆环
+    .item 为包裹在 .circle 里的圆环
+    往里进一环 width - 40px
+    border-radius - 20px  */
+.circle,
+.circle .item {
+  position: relative;
+  width: 500px;
+  height: 500px;
+  margin-left: 150px;
+  border: 1px dotted #b9d7e9;
+  border-radius: 250px;
+  opacity: .6;
+}
+
+.circle .item {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+}
+
+.circle::before,
+.circle::after,
+.circle .item::before,
+.circle .item::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 460px;
+  height: 460px;
+  margin: auto;
+  border: 1px dotted #b9d7e9;
+  border-radius: 230px;
+}
+
+.circle::after {
+  width: 420px;
+  height: 420px;
+  border-radius: 210px;
+}
+
+.circle .item:nth-child(1) {
+  width: 380px;
+  height: 380px;
+  /*margin-left: 20px;*/
+  border-radius: 190px;
+}
+
+.circle .item:nth-child(1)::before {
+  width: 340px;
+  height: 340px;
+  border-radius: 170px;
+}
+
+.circle .item:nth-child(1)::after {
+  width: 300px;
+  height: 300px;
+  border-radius: 150px;
+}
+
+.circle .item:nth-child(2) {
+  width: 260px;
+  height: 260px;
+  border-radius: 130px;
+}
+
+.circle .item:nth-child(2)::before {
+  width: 220px;
+  height: 220px;
+  border-radius: 110px;
+}
+
+.circle .item:nth-child(2)::after {
+  width: 180px;
+  height: 180px;
+  border-radius: 90px;
+}
+
+.circle .item:nth-child(3) {
+  width: 140px;
+  height: 140px;
+  border-radius: 70px;
+}
+
+.circle .item:nth-child(3)::before {
+  width: 100px;
+  height: 100px;
+  border-radius: 50px;
+}
+
+.circle .item:nth-child(3)::after {
+  width: 60px;
+  height: 60px;
+  border-radius: 30px;
+}
+
+/* 通过一个 div 覆盖在圆环上 不停的转动来使用扫描的效果 */
+.scan {
+  position: absolute;
+  top: 0;
+  left: 150px;
+  width: 500px;
+  height: 500px;
+  border-radius: 250px;
+  background-image: conic-gradient(transparent, #9eb8ca);
+  transform: rotate(0deg);
+  animation: rotate 4s linear infinite;
+}
+
+@keyframes rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+img.avatar {
+  position: absolute;
+  top: 220px;
+  left: 370px;
+  width: 60px;
+  height: 60px;
+  border-radius: 30px;
+}
+
+.person-list {
+  margin-top: 30px;
+  text-align: center;
+  /*background-color: #2abbfe;*/
+}
+
+.person-list .item {
+  display: inline-block;
+  width: 150px;
+  height: 240px;
+  border-radius: 10px;
+  background-color: #fff;
+}
+
+.person-list .item .item-avatar {
+  width: 80px;
+  height: 80px;
+  margin: 20px 0 15px;
+  border-radius: 40px;
+}
+.person-list .item .distance {
+  margin: 5px 0 10px;
+}
+.person-list .item .item-gender {
+  width: 20px;
+  height: 20px;
+  vertical-align: top;
+  border-radius: 10px;
+}
+button.greet {
+  padding: 6px 16px;
+  border: none;
+  border-radius: 4px;
+  color: #eee;
+  background-color: #2abbfe;
+  cursor: pointer;
+}
+button.greet:focus {
+  outline: none;
+  opacity: .8;
+}
