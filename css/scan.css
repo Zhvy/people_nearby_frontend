@@ -164,7 +164,7 @@ img.avatar {
   border-radius: 10px;
   background-color: #fff;
   transform: scale(.8);
-  /*transition: .5s;*/
+  transition: .5s;
   opacity: .6;
 }
 
@@ -179,15 +179,18 @@ img.avatar {
   margin: 20px 0 15px;
   border-radius: 40px;
 }
+
 .person-list .item .distance {
   margin: 5px 0 10px;
 }
+
 .person-list .item .item-gender {
   width: 20px;
   height: 20px;
   vertical-align: top;
   border-radius: 10px;
 }
+
 button.greet {
   padding: 6px 16px;
   border: none;
@@ -196,7 +199,18 @@ button.greet {
   background-color: #2abbfe;
   cursor: pointer;
 }
+
 button.greet:focus {
   outline: none;
   opacity: .8;
+}
+
+.dot {
+  position: absolute;
+  top: 0;
+  left: 150px;
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  cursor: pointer;
 }
