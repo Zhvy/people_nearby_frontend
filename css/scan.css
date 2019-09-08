@@ -148,17 +148,29 @@ img.avatar {
 }
 
 .person-list {
+  position: relative;
+  height: 240px;
   margin-top: 30px;
   text-align: center;
   /*background-color: #2abbfe;*/
+  user-select: none;
+  overflow: hidden;
 }
 
 .person-list .item {
-  display: inline-block;
+  position: absolute;
   width: 150px;
   height: 240px;
   border-radius: 10px;
   background-color: #fff;
+  transform: scale(.8);
+  /*transition: .5s;*/
+  opacity: .6;
+}
+
+.person-list .item.active {
+  transform: scale(1);
+  opacity: 1;
 }
 
 .person-list .item .item-avatar {
