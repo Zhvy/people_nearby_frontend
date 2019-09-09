@@ -1,0 +1,63 @@
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  background: url(../img/earth1.jpg) no-repeat top left / cover;
+}
+
+.container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 500px;
+  height: 500px;
+  margin: auto;
+  background-color: #fff;
+}
+
+.container .title {
+  margin: 35px 0 0 45px;
+  font-size: 24px;
+  /*font-weight: bold;*/
+  color: #333;
+}
+
+.input-item {
+  width: 250px;
+  margin: 50px auto;
+  padding-left: 5px;
+  border-bottom: 1px solid #000;
+}
+
+.input-item input {
+  margin-left: 10px;
+  padding: 5px 0 8px 10px;
+  font-size: 16px;
+  border: none;
+  /*outline: none;*/
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+}
+
+button.submit {
+  float: right;
+  padding: 10px 0 10px 25px;
+  border: none;
+  letter-spacing: 18px;
+  font-size: 18px;
+  color: #fff;
+  background-color: #0369ef;
+  cursor: pointer;
+  transition: .5s;
+}
+
+button.submit:hover {
+  padding: 10px 10px 10px 40px;
+}
