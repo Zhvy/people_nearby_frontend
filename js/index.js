@@ -21,3 +21,34 @@ lognBtn.onclick = function () {
   signForm[1].classList.toggle('active')
   signElem.style.transform = 'rotateY(0deg)'
 }
+
+var loginForm = document.forms.login
+var registerForm = document.forms.register
+
+loginForm.onsubmit = function (e) {
+  e.preventDefault()
+  var params = {
+    username: this.username.value,
+    password: this.password.value
+  }
+  ajax('post', '/v1/login', params, function (data) {
+    if (data.ok) {
+      document.cookie = 'user_id=' + data.result['user_id']
+      window.location.replace('profile.html')
+    }
+  })
+}
+
+registerForm.onsubmit = function (e) {
+  e.preventDefault()
+  var params = {
+    username: this.username.value,
+    password: this.password.value
+  }
+  ajax('post', '/v1/profile/user', params, function (data) {
+    if (data.ok) {
+      document.cookie = 'user_id=' + data.result['user_id']
+      window.location.replace('profile.html')
+    }
+  })
+}

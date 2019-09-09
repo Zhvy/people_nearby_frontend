@@ -20,41 +20,50 @@
         <div class="left">
           <p class="title">注册一个账户</p>
           <p class="subtitle">Sign up for an account</p>
-          <div class="more">已有账号？<button class="btn-login">登录</button></div>
+          <div class="more">已有账号？
+            <button class="btn-login">登录</button>
+          </div>
         </div>
         <div class="right">
           <p class="title">登陆你的账户</p>
           <p class="subtitle">Log in to your account</p>
-          <div class="more">没有账号？<button class="btn-register" >注册</button></div>
+          <div class="more">没有账号？
+            <button class="btn-register">注册</button>
+          </div>
         </div>
       </div>
       <div class="sign">
         <div class="active">
           <p class="title">Login</p>
-          <div class="input-item">
-            <img class="icon" src="img/user.png" alt="">
-            <input type="text" placeholder="Username">
-          </div>
-          <div class="input-item">
-            <img class="icon" src="img/password.png" alt="">
-            <input type="password" placeholder="Password">
-          </div>
-          <button class="submit">登录></button>
+          <form name="login">
+            <div class="input-item">
+              <img class="icon" src="img/user.png" alt="">
+              <input type="text" name="username" placeholder="用户名" required>
+            </div>
+            <div class="input-item">
+              <img class="icon" src="img/password.png" alt="">
+              <input type="password" name="password" placeholder="密码" required>
+            </div>
+            <button class="submit" type="submit">登录></button>
+          </form>
         </div>
         <div>
           <p class="title">Register</p>
-          <div class="input-item">
-            <img class="icon" src="img/user.png" alt="">
-            <input type="text" placeholder="Username">
-          </div>
-          <div class="input-item">
-            <img class="icon" src="img/password.png" alt="">
-            <input type="password" placeholder="Password">
-          </div>
-          <button class="submit">注册></button>
+          <form name="register">
+            <div class="input-item">
+              <img class="icon" src="img/user.png" alt="">
+              <input type="text" name="username" placeholder="用户名">
+            </div>
+            <div class="input-item">
+              <img class="icon" src="img/password.png" alt="">
+              <input type="password" name="password" placeholder="密码">
+            </div>
+            <button class="submit" type="submit">注册></button>
+          </form>
         </div>
       </div>
     </div>
+    <script src="js/ajax.js"></script>
     <script src="js/index.js"></script>
   </body>
 </html>

@@ -7,48 +7,61 @@
     <title>Title</title>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/profile.css">
+    <style>
+      .container {
+        height: 600px;
+      }
+    </style>
   </head>
   <body>
     <div class="container">
       <p class="title">修改资料</p>
-      <div class="input-item">
-        <img class="icon" src="img/icon/nickname.png" alt="">
-        <input type="text" placeholder="昵称">
-      </div>
-      <div class="input-item">
-        <img class="icon" src="img/icon/age.png" alt="">
-        <input type="text" placeholder="年龄">
-      </div>
-      <div class="input-item">
-        <img class="icon" src="img/icon/gender.png" alt="">
-        <label>
-          <img class="icon" src="img/icon/man.png" alt="">
-          <input type="radio" name="gender" value="男">
-        </label>
-        <label>
-          <img class="icon" src="img/icon/woman.png" alt="">
-          <input type="radio" name="gender" value="女">
-        </label>
-      </div>
-      <div class="input-item">
-        <img class="icon" src="img/icon/interest.png" alt="">
-        <label>
-          <input type="checkbox" name="interests" value="唱歌">
-          唱歌
-        </label>
-        <label>
-          <input type="checkbox" name="interests" value="跳舞">
-          跳舞
-        </label>
-        <label>
-          <input type="checkbox" name="interests" value="游戏">
-          游戏
-        </label>
-      </div>
-      <!--        <div class="input-item">-->
-      <!--          <input type="text" placeholder="位置">-->
-      <!--        </div>-->
-      <button class="submit">提交</button>
+      <form name="modify">
+        <div class="input-item">
+          <img class="icon" src="img/icon/nickname.png" alt="">
+          <input type="text" name="username" disabled>
+        </div>
+        <div class="input-item">
+          <img class="icon" src="img/icon/nickname.png" alt="">
+          <input type="text" name="nickname" placeholder="昵称">
+        </div>
+        <div class="input-item">
+          <img class="icon" src="img/icon/age.png" alt="">
+          <input type="text" name="age" placeholder="年龄">
+        </div>
+        <div class="input-item">
+          <img class="icon" src="img/icon/gender.png" alt="">
+          <label>
+            <img class="icon" src="img/icon/man.png" alt="">
+            <input type="radio" name="gender" value="男">
+          </label>
+          <label>
+            <img class="icon" src="img/icon/woman.png" alt="">
+            <input type="radio" name="gender" value="女">
+          </label>
+        </div>
+        <div class="input-item">
+          <img class="icon" src="img/icon/interest.png" alt="">
+          <label>
+            <input type="checkbox" name="interests" value="唱歌">
+            唱歌
+          </label>
+          <label>
+            <input type="checkbox" name="interests" value="跳舞">
+            跳舞
+          </label>
+          <label>
+            <input type="checkbox" name="interests" value="游戏">
+            游戏
+          </label>
+        </div>
+        <!--        <div class="input-item">-->
+        <!--          <input type="text" placeholder="位置">-->
+        <!--        </div>-->
+        <button type="submit" class="submit">提交</button>
+      </form>
     </div>
+    <script src="js/ajax.js"></script>
+    <script src="js/profile.js"></script>
   </body>
 </html>

@@ -1,3 +1,27 @@
+var template = '<div class="item demo">' +
+  '<img class="item-avatar" src="img/avatar.jpeg" alt="">' +
+  '<p class="nickname">#nickname#</p>' +
+  '<p class="distance"><img class="item-gender" src="img/icon/man.png" alt=""> 10KM</p>' +
+  '<button class="greet">打招呼</button>' +
+  '</div>'
+
+var url = '/v1/nearby_people/' + document.cookie.split('=')[1]
+// 过滤条件为 {} 空对象
+// 测试
+ajax('put', url, {}, function (data) {
+  if (data.ok) {
+    console.log(data.result)
+    var box = document.getElementsByClassName('person-list')[0]
+    for (var i = 0; i < data.result.length; i++) {
+      var item = template.replace('#nickname#', data.result[i].nickname)
+      box.innerHTML += item
+    }
+  } else {
+    console.log(data)
+  }
+})
+
+// todo: ajax 异步添加元素的代码异步执行问题
 var container = document.querySelector('.container')
 var peopleBox = document.querySelector('.person-list')
 var people = peopleBox.querySelectorAll('.item')
