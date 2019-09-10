@@ -13,6 +13,7 @@ function ajax (method, url, params, callback) {
     xhr.setRequestHeader('x-authenticated-userid', document.cookie.split('=')[1])
     xhr.send(JSON.stringify(params))
   } else {
+    xhr.setRequestHeader('x-authenticated-userid', document.cookie.split('=')[1])
     xhr.send()
   }
 }

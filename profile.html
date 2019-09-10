@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="css/profile.css">
     <style>
       .container {
-        height: 600px;
+        height: 680px;
       }
     </style>
   </head>
@@ -55,9 +55,12 @@
             游戏
           </label>
         </div>
-        <!--        <div class="input-item">-->
-        <!--          <input type="text" placeholder="位置">-->
-        <!--        </div>-->
+        <div class="input-item">
+          <img class="icon" src="img/icon/location.png" alt="">
+          <input class="location" type="text" name="lat" placeholder="纬度" disabled>
+          <input class="location" type="text" name="lon" placeholder="经度" disabled>
+          <button id="add-location" type="button">获取位置</button>
+        </div>
         <button type="submit" class="submit">提交</button>
       </form>
     </div>

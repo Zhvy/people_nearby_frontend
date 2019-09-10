@@ -9,7 +9,8 @@ var center = (boxWidth - itemWidth) / 2
 var url = '/v1/nearby_people/' + document.cookie.split('=')[1]
 // 过滤条件为 {} 空对象
 // 测试
-ajax('put', url, {}, function (data) {
+var params = storage.get('params')
+ajax('put', url, params, function (data) {
   if (data.ok) {
     console.log(data.result)
     for (var i = 0; i < data.result.length; i++) {

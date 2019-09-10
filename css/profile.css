@@ -61,3 +61,7 @@ button.submit {
 button.submit:hover {
   padding: 10px 10px 10px 40px;
 }
+
+.location {
+  width: 40px;
+}
