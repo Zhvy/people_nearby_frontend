@@ -102,3 +102,23 @@ peopleBox.onmousedown = function (e) {
 document.body.ondragstart = function (event) {
   event.preventDefault()
 }
+
+var operateBtn = document.querySelector('.operate')
+var operateForm = document.querySelector('.operate-form')
+operateBtn.onclick = function () {
+  operateBtn.classList.toggle('active')
+  operateForm.classList.toggle('active')
+}
+var again = document.forms.again
+again.onsubmit = function (e) {
+  e.preventDefault()
+
+  var params = {
+    distance: this.distance.value,
+    gender: this.gender.value,
+    gte_age: this.gte_age.value || 1, // todo：不能为空字符串
+    lte_age: this.lte_age.value || 100
+  }
+  storage.set('params', params)
+  window.location.reload()
+}

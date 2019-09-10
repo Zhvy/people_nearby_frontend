@@ -51,6 +51,31 @@
         </div>
         <button class="close"></button>
       </div>
+      <div class="operate-form">
+        <form name="again">
+          <div class="operare-item">
+            <img class="icon" src="img/icon/distance.png" alt="">
+            <input class="limit" type="text" name="distance" placeholder="距离">KM
+          </div>
+          <div class="operare-item">
+            <img class="icon" src="img/icon/gender.png" alt="">
+            <label>
+              <input type="radio" name="gender" value="男">男
+            </label>
+            <label>
+              <input type="radio" name="gender" value="女">女
+            </label>
+          </div>
+          <div class="operare-item">
+            <img class="icon" src="img/icon/age.png" alt="">
+            <input class="age-range" type="text" name="gte_age" placeholder="年龄">
+            -
+            <input class="age-range" type="text" name="lte_age" placeholder="年龄">
+          </div>
+          <button class="again">重新寻找</button>
+        </form>
+      </div>
+      <div class="operate"></div>
     </div>
     <script src="js/ajax.js"></script>
     <script src="js/storage.js"></script>
