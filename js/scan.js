@@ -6,6 +6,8 @@ var boxWidth = peopleBox.clientWidth
 var itemWidth = 150  // todo: 动态获取
 var center = (boxWidth - itemWidth) / 2
 
+var moreInfo = document.querySelector('.more')
+
 var url = '/v1/nearby_people/' + document.cookie.split('=')[1]
 // 过滤条件为 {} 空对象
 // 测试
@@ -17,7 +19,7 @@ ajax('put', url, params, function (data) {
       // 添加 item 元素
       var item = template.replace('#nickname#', data.result[i].nickname)
       item = item.replace('#base64#', data.result[i].icon.slice(2, -1))
-      item = item.replace('#gender#', data.result[i].gender === '男'? 'man' : 'woman')
+      item = item.replace('#gender#', data.result[i].gender === '男' ? 'man' : 'woman')
       item = item.replace('#distance#', data.result[i].distance)
       peopleBox.appendChild(createItemElem(item))
 
@@ -39,6 +41,26 @@ ajax('put', url, params, function (data) {
         }
       })(dotElem, i)
       container.insertBefore(dotElem, peopleBox)
+
+      // 更多信息按钮
+      var btn = itemList[i].querySelector('button.greet')
+      ;(function (btn, i) {
+        btn.onclick = function () {
+          var info = moreInfo.innerHTML
+          info = info.replace('#base64#', data.result[i].icon.slice(2, -1))
+          info = info.replace('#nickname#', data.result[i].nickname)
+          info = info.replace('#age#', data.result[i].age)
+          info = info.replace('#gender#', data.result[i].gender)
+          info = info.replace('#interests#', data.result[i].interests)
+          info = info.replace('#bio#', data.result[i].bio)
+          moreInfo.innerHTML = info
+          moreInfo.style.display = 'block'
+          var close = moreInfo.querySelector('button.close')
+          close.onclick = function () {
+            moreInfo.style.display = 'none'
+          }
+        }
+      })(btn, i)
     }
     itemList[0].classList.add('active')
   } else {

@@ -218,3 +218,58 @@ button.greet:focus {
 .template {
   display: none;
 }
+
+.more {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 380px;
+  height: 520px;
+  margin: auto;
+  border-radius: 10px;
+  box-shadow: 5px 5px 10px 8px rgba(0,0,0,.3);
+  background-color: #fff;
+}
+
+.more .more-avatar {
+  display: block;
+  width: 140px;
+  height: 140px;
+  margin: 30px auto;
+  border-radius: 70px;
+}
+
+.more .icon {
+  width: 25px;
+  height: 25px;
+  vertical-align: -5px;
+}
+
+.more .more-item {
+  margin: 20px 60px;
+  font-size: 20px;
+}
+
+.more .more-item .item-name {
+  letter-spacing: 10px;
+}
+.more .more-item .item-content {
+  color: #999;
+}
+
+button.close {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  width: 30px;
+  height: 30px;
+  border: 2px solid #2abbfe;
+  border-radius: 15px;
+  outline: none;
+  background: url(../img/icon/close.png) no-repeat center/cover;
+  cursor: pointer;
+}
+
