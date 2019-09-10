@@ -1,6 +1,6 @@
 var modifyForm = document.forms.modify
 
-var url = '/service/v1/profile/user/' + document.cookie.split('=')[1]
+var url = '/v1/profile/user/' + document.cookie.split('=')[1]
 ajax('get', url, null, function (data) {
   if (data.ok) {
     modifyForm.username.value = data.result.username

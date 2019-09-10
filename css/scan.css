@@ -214,3 +214,7 @@ button.greet:focus {
   border-radius: 10px;
   cursor: pointer;
 }
+
+.template {
+  display: none;
+}
