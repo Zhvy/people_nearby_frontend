@@ -1,7 +1,7 @@
 var container = document.querySelector('.container')
 var peopleBox = document.querySelector('.person-list')
 var itemList = peopleBox.getElementsByClassName('item')  // 后面js添加了item 需要动态获取
-var templateElem = document.querySelector('.template')
+var template = document.querySelector('.template').innerHTML
 var boxWidth = peopleBox.clientWidth
 var itemWidth = 150  // todo: 动态获取
 var center = (boxWidth - itemWidth) / 2
@@ -15,7 +15,10 @@ ajax('put', url, params, function (data) {
     console.log(data.result)
     for (var i = 0; i < data.result.length; i++) {
       // 添加 item 元素
-      var item = templateElem.innerHTML.replace('#nickname#', data.result[i].nickname)
+      var item = template.replace('#nickname#', data.result[i].nickname)
+      item = item.replace('#base64#', data.result[i].icon.slice(2, -1))
+      item = item.replace('#gender#', data.result[i].gender === '男'? 'man' : 'woman')
+      item = item.replace('#distance#', data.result[i].distance)
       peopleBox.appendChild(createItemElem(item))
 
       itemList[i].style.left = center + i * itemWidth + 'px'
