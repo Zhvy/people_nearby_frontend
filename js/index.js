@@ -35,6 +35,16 @@ loginForm.onsubmit = function (e) {
     if (data.ok) {
       document.cookie = 'user_id=' + data.result['user_id']
       window.location.replace('profile.html')
+    } else {
+      if (data['error_type'] === 'user_profile_not_found') {
+        loginForm.username.style.color = 'red'
+        loginForm.username.value = '用户名不存在'
+        loginForm.password.value = ''
+      } else if (data['error_type'] === 'password_wrong') {
+        var tip = loginForm.querySelector('.password-wrong')
+        tip.classList.add('active')
+        loginForm.password.value = ''
+      }
     }
   })
 }
@@ -49,6 +59,14 @@ registerForm.onsubmit = function (e) {
     if (data.ok) {
       document.cookie = 'user_id=' + data.result['user_id']
       window.location.replace('profile.html')
+    } else {
+      if (data['error_type'] === 'profile_already_exist') {
+        registerForm.username.style.color = 'red'
+        registerForm.username.value = '用户名不存在'
+        registerForm.password.value = ''
+      } else {
+        alert(data.message)
+      }
     }
   })
 }

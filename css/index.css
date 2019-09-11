@@ -122,3 +122,13 @@ body {
 .sign button.submit:hover {
   padding-left: 80px;
 }
+
+.password-wrong {
+  display: none;
+  margin-left: 20px;
+  font-size: 18px;
+  color: red;
+}
+.password-wrong.active {
+  display: inline;
+}

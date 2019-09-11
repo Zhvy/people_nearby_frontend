@@ -8,6 +8,20 @@ var center = (boxWidth - itemWidth) / 2
 
 var moreInfo = document.querySelector('.more')
 
+// 加载头像
+window.onload = function () {
+  var url = '/v1/profile/user/' + document.cookie.split('=')[1]
+  ajax('get', url, null, function (data) {
+    if (data.ok) {
+      var avatar = document.getElementById('own-avatar')
+      // 没有头像就默认
+      if (data.result.icon) {
+        avatar.src = data.result.icon
+      }
+    }
+  })
+}
+
 var url = '/v1/nearby_people/' + document.cookie.split('=')[1]
 // 过滤条件为 {} 空对象
 // 测试

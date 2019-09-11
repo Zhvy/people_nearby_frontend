@@ -9,7 +9,11 @@
     <link rel="stylesheet" href="css/profile.css">
     <style>
       .container {
-        height: 680px;
+        width: 480px;
+        height: 740px;
+      }
+      .input-item {
+        margin: 30px auto;
       }
     </style>
   </head>
@@ -17,6 +21,10 @@
     <div class="container">
       <p class="title">修改资料</p>
       <form name="modify">
+        <div class="input-avatar">
+          <img id="avatar" class="avatar" src="img/avatar.png" alt="">
+          <input id="upload" type="file" name="upload">
+        </div>
         <div class="input-item">
           <img class="icon" src="img/icon/nickname.png" alt="">
           <input type="text" name="username" disabled>
@@ -60,6 +68,10 @@
           <input class="location" type="text" name="lat" placeholder="纬度" disabled>
           <input class="location" type="text" name="lon" placeholder="经度" disabled>
           <button id="add-location" type="button">获取位置</button>
+        </div>
+        <div class="input-item">
+          <img class="icon" src="img/icon/bio.png" alt="">
+          <input type="text" name="bio" placeholder="个人介绍">
         </div>
         <button type="submit" class="submit">提交</button>
       </form>

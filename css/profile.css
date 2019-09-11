@@ -65,3 +65,21 @@ button.submit:hover {
 .location {
   width: 40px;
 }
+
+.input-avatar {
+  width: 250px;
+  margin: 10px auto;
+  text-align: center;
+}
+.input-avatar .avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50px;
+}
+.input-avatar input {
+  margin-left: 90px;
+}
+
+.input-item input[name="bio"] {
+  width: 200px;
+}
