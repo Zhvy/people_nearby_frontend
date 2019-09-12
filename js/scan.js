@@ -123,8 +123,9 @@ operateBtn.onclick = function () {
   operateBtn.classList.toggle('active')
   operateForm.classList.toggle('active')
 }
-var start = 0
-var size = 20
+var lastParams = storage.get('params')
+var start = lastParams.start || 0
+var size = lastParams.size || 10
 var again = document.forms.again
 again.onsubmit = function (e) {
   e.preventDefault()
@@ -133,10 +134,16 @@ again.onsubmit = function (e) {
     distance: this.distance.value ? this.distance.value + 'km' : this.distance.value,
     gender: this.gender.value,
     gte_age: this.gte_age.value || 1, // todo：不能为空字符串
-    lte_age: this.lte_age.value || 100,
-    start: start,
-    size: size
+    lte_age: this.lte_age.value || 100
   }
   storage.set('params', params)
+  window.location.reload()
+}
+
+var next = document.getElementById('next')
+next.onclick = function () {
+  var newParams = storage.get('params')
+  newParams.start = start +10
+  storage.set('params', newParams)
   window.location.reload()
 }
