@@ -31,11 +31,12 @@ upload.onchange = function () {
   fReader.readAsDataURL(this.files[0]);
   fReader.onloadend = function(e){
     var avatar = document.getElementById("avatar");
-    avatar.src = e.target.result;
+    var result = e.target.result;
     // 取得编码
-    // var index = avatar.src.indexOf(',') + 1
-    // iconBase64 = avatar.src.slice(index)
-    iconBase64 = avatar.src
+    var index = result.indexOf(',') + 1
+    iconBase64 = result.slice(index)
+    avatar.src = 'data:image/jpeg;base64,' + iconBase64
+    iconBase64 = "b'" + iconBase64
   }
 }
 

@@ -16,7 +16,7 @@ window.onload = function () {
       var avatar = document.getElementById('own-avatar')
       // 没有头像就默认
       if (data.result.icon) {
-        avatar.src = data.result.icon
+        avatar.src = 'data:image/jpeg;base64,' + data.result.icon.slice(2, -1)
       }
     }
   })
@@ -123,15 +123,19 @@ operateBtn.onclick = function () {
   operateBtn.classList.toggle('active')
   operateForm.classList.toggle('active')
 }
+var start = 0
+var size = 20
 var again = document.forms.again
 again.onsubmit = function (e) {
   e.preventDefault()
 
   var params = {
-    distance: this.distance.value,
+    distance: this.distance.value ? this.distance.value + 'km' : this.distance.value,
     gender: this.gender.value,
     gte_age: this.gte_age.value || 1, // todo：不能为空字符串
-    lte_age: this.lte_age.value || 100
+    lte_age: this.lte_age.value || 100,
+    start: start,
+    size: size
   }
   storage.set('params', params)
   window.location.reload()
